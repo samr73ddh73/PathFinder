@@ -5,3 +5,18 @@
     display: inline-block;
   }
   
+  .node-finish {
+    background-color: red;
+  }
+  
+  .node-start {
+    background-color: green;
+  }
+
+  .is-visited{
+    background-color: blueviolet;
+  }
+  .short-path
+  {
+    background-color: rgba(248, 99, 149, 0.74);
+  }
