@@ -7,16 +7,75 @@
   
   .node-finish {
     background-color: red;
+    border-radius: 5px;
+
+    /* background-image: url('end.jpeg'); */
+
   }
   
   .node-start {
     background-color: green;
+    border-radius: 5px;
   }
 
   .is-visited{
-    background-color: blueviolet;
+    background-color:rgba(44, 168, 152, 0.75);
+    /*  blueviolet; */
+    animation-name: example1;
+    animation-duration: 2s;
+   
+  }
+  @keyframes example1 {
+    0% {
+      transform: scale(0.3);
+      background-color: rgba(26, 4, 44, 0.75);
+      /* border-radius: 100%; */
+    }
+  
+    50% {
+      background-color: rgba(27, 36, 119, 0.75);
+    }
+  
+    75% {
+      transform: scale(1.2);
+      background-color: rgba(38, 99, 128, 0.75);
+    }
+  
+    100% {
+      transform: scale(1);
+      background-color: rgba(44, 168, 152, 0.75);
+    }
   }
   .short-path
   {
-    background-color: rgba(248, 99, 149, 0.74);
+    animation-name: example;
+    animation-duration: 2s;
+    background-color: rgba(221, 233, 49, 0.75);
+    /* border-radius: 10px; */
+    /* width: 50%; */
+  }
+  @keyframes example {
+    0% {
+      transform: scale(0.3);
+      background-color: rgba(4, 44, 4, 0.75);
+      border-radius: 100%;
+    }
+  
+    50% {
+      background-color: rgba(50, 134, 29, 0.75);
+    }
+  
+    75% {
+      transform: scale(1.2);
+      background-color: rgba(149, 243, 41, 0.75);
+    }
+  
+    100% {
+      transform: scale(1);
+      background-color: rgba(221, 233, 49, 0.75);
+    }
+  }
+  .node-wall
+  {
+    background-color: rgb(7, 7, 7);
   }

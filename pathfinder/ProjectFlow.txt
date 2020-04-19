@@ -1,0 +1,20 @@
+1)How to run the project?
+--> cd pathfinder
+--> npm start
+
+Flow of the project:
+1) Look at Node.jsx:
+--> It is a component that describes the cell of our grid.
+
+2) App.js:
+ It renders PathfindingVisualizer, so we will go and look at PathfindingVisualizer.jsx
+
+3)PathfindingVisualizer.jsx
+3.1 Construct call
+3.2 componentDidMount() : It's called just after constructor(It is inbuilt react function): we use it for 
+initializing our grid
+3.3 render(): 
+--->3.3.1 If the button is pressed- we call dijkstras function
+--->3.3.2 Let's discuss dijkstras function:
+
+--->3.3.2 First we will traverse through each cell of the grid, and render the result of dijkstras function

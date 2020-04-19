@@ -8,6 +8,7 @@ export default class Node extends React.Component {
       isFinish,
       isStart,
       isWall,
+      
       onMouseDown,
       onMouseEnter,
       onMouseUp,
@@ -27,9 +28,9 @@ export default class Node extends React.Component {
       <div
         id={`node-${row}-${col}`}
         className={`node ${extraClassName}`}
-        // onMouseDown={() => onMouseDown(row, col)}
-        // onMouseEnter={() => onMouseEnter(row, col)}
-        // onMouseUp={() => onMouseUp()}
+        onMouseDown={() => onMouseDown(row, col)}
+        onMouseEnter={() => onMouseEnter(row, col)}
+        onMouseUp={() => onMouseUp()}
         ></div>
     );
   }

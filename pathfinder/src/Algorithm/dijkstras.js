@@ -16,6 +16,10 @@ export function dijkstra(grid,startNode,endNode)
     while(nodes.length>0)
     {
         const closestNode=minDistance(nodes,startNode);
+        if(closestNode.isWall===true)
+            continue;
+        if(closestNode.distance=== Infinity)
+            return visitedNodes;
         closestNode.isVisited=true;
         visitedNodes.push(closestNode);
         if (closestNode === endNode) 
@@ -27,14 +31,18 @@ function minDistance(nodes,startNode)
 {
     var min = Number.MAX_SAFE_INTEGER;
     var minNode={};
+    var flag=0;
     for(const n of nodes)
     {
         if(n.distance< min) 
         {   
             min=n.distance; 
             minNode=n;
+            flag=1;
         }
     }
+    if(flag==0)
+        return nodes[0];
     const index = nodes.indexOf(minNode);
     nodes.splice(index, 1);
     return minNode;
@@ -59,6 +67,22 @@ function getUnvisitedNeighbors(node, grid) {
         neighbors.push(grid[row][col - 1]);
     if (col < grid[0].length - 1) 
         neighbors.push(grid[row][col + 1]);
+    // if(row>0 && col>0)
+    // {
+    //     neighbors.push(grid[row-1][col-1]);
+    // }
+    // if(row<grid[0].length-1 && col<grid[0].length - 1)
+    // {
+    //     neighbors.push(grid[row+1][col+1]);
+    // }
+    // if(row>0 && col<grid[0].length - 1)
+    // {
+    //     neighbors.push(grid[row-1][col+1]);
+    // }
+    // if(row<grid[0].length - 1 && col>0)
+    // {
+    //     neighbors.push(grid[row+1][col-1]);
+    // }
     return neighbors.filter(neighbor => !neighbor.isVisited);
   }
 
